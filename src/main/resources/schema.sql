@@ -14,3 +14,8 @@ name varchar(20),
 description varchar(100),
 price decimal(8,3) 
 );
+create table customer(
+	id INT PRIMARY KEY,
+    username VARCHAR(200),
+    email VARCHAR(100)
+);

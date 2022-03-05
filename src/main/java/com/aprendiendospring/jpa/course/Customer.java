@@ -4,9 +4,9 @@
  */
 package com.aprendiendospring.jpa.course;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -14,13 +14,13 @@ import lombok.RequiredArgsConstructor;
  *
  * @author IvanGarMo
  */
+@Entity
+@Table(name="customer")
 @Data
 @RequiredArgsConstructor
-@Entity
-public class Product {
+public class Customer {
     @Id
     private int id;
-    private String name;
-    private String description;
-    private double price;
+    private String username;
+    private String email;
 }
