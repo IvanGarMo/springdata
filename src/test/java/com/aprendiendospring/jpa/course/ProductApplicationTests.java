@@ -65,12 +65,12 @@ public class ProductApplicationTests {
         printProduct(products);
     }
     
-    @Test
-    public void testFindProductByIdIn() {
-        List<Integer> ids = Arrays.asList(1, 3, 5);
-        List<Product> products = productRepository.findProductByIdIn(ids);
-        printProduct(products);
-    }
+//    @Test
+//    public void testFindProductByIdIn() {
+//        List<Integer> ids = Arrays.asList(1, 3, 5);
+//        List<Product> products = productRepository.findProductByIdIn(ids);
+//        printProduct(products);
+//    }
     
     public void printProduct(List<Product> products) {
       products.forEach(p -> {
