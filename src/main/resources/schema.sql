@@ -18,7 +18,15 @@ create table customer(
 	id INT PRIMARY KEY,
     username VARCHAR(200),
     email VARCHAR(100)
-);
+)
+/* Sección de finders */
+;
+INSERT INTO customer VALUES(1, 'garmo2', 'ivangarmo98@gmail.com');
+INSERT INTO customer VALUES(2, 'sempi', 'saulxperience@gmail.com');
+INSERT INTO customer VALUES(3, 'carranza', 'carranza@carranza.com');
+INSERT INTO customer VALUES(4, 'franco', 'gfranco@itl.com');
+INSERT INTO customer VALUES(5, 'lamia', 'lhamdan@gmail.com');
+;
 create table if not exists employee(
     id int PRIMARY KEY AUTO_INCREMENT,
     name varchar(20)
