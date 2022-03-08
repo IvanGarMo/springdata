@@ -19,3 +19,7 @@ create table customer(
     username VARCHAR(200),
     email VARCHAR(100)
 );
+create table if not exists employee(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    name varchar(20)
+);
