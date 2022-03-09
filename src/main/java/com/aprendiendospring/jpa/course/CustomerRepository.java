@@ -4,12 +4,19 @@
  */
 package com.aprendiendospring.jpa.course;
 
+import javax.transaction.Transactional;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 /**
  *
  * @author IvanGarMo
  */
 public interface CustomerRepository extends CrudRepository<Customer, Integer> {
-    
+    @Query("update Customer set email = :email where id = :id")
+    @Modifying
+    @Transactional
+    public void updateEmail(@Param("id") int id, @Param("email") String email);
 }
