@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.AllArgsConstructor;
 
 /**
  *
@@ -19,11 +20,15 @@ import javax.persistence.Table;
 @Data
 @RequiredArgsConstructor
 @Entity
-@Table(name="customer")
+@AllArgsConstructor
 public class Customer {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String username;
     private String email;
+    
+    public Customer(String username, String email) {
+        this.username = username;
+        this.email = email;
+    }
 }

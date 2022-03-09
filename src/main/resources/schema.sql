@@ -14,3 +14,4 @@ fname varchar(20),
 lname varchar(20),
 score int
 );
+S
