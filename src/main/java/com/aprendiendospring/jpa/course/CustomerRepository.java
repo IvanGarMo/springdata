@@ -23,4 +23,13 @@ public interface CustomerRepository extends CrudRepository<Customer, Integer> {
     @Modifying
     @Transactional
     public void updateEmail(@Param("id") int id, @Param("email") String email);
+    
+    @Query(value="select * from customer", nativeQuery=true)
+    List<Customer> getCustomersNQ();
+    
+    @Query(value="select * from customer where email= :email", nativeQuery=true)
+    List<Customer> getCustomersByEmailNQ(@Param("email") String email);
+    
+    @Query(value="select id from customer where email = :email", nativeQuery=true)
+    List<Object[]> getIdByCustomerEmail(@Param("email") String email);
 }
