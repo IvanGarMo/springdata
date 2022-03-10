@@ -10,6 +10,6 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author IvanGarMo
  */
-public interface PaymentRepository extends CrudRepository<Payment, Integer> {
+public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
     
 }

@@ -8,21 +8,12 @@
  */
 use jpa
 ;
-create table payment(
-id int PRIMARY KEY,
-amount decimal(8,3)
-)
-;
-create table card(
-id int ,
-cardnumber varchar(20),
- FOREIGN KEY (id)
-REFERENCES payment(id)
-)
-;
-create table bankcheck(
-id int ,
-checknumber varchar(20),
-FOREIGN KEY (id)
-REFERENCES payment(id)
+create table employee(
+id int,
+name varchar(20),
+streetaddress varchar(30),
+city varchar(20),
+state varchar(20),
+zipcode varchar(20),
+country varchar(20)
 )

@@ -4,21 +4,25 @@
  */
 package com.aprendiendospring.jpa.course;
 
-import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import javax.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  *
  * @author IvanGarMo
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name="bankcheck")
-@PrimaryKeyJoinColumn(name="id")
-public class Check extends Payment {
-    @Column(name="checknumber")
-    private String checkNumber;
+public class Employee {
+    @Id
+    private int id;
+    private String name;
+    @Embedded
+    private Address address;
 }

@@ -4,10 +4,9 @@
  */
 package com.aprendiendospring.jpa.course;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -15,12 +14,15 @@ import lombok.RequiredArgsConstructor;
  *
  * @author IvanGarMo
  */
+@Embeddable
 @Data
 @RequiredArgsConstructor
-@Entity
-@Inheritance(strategy=InheritanceType.JOINED)
-public class Payment {
-    @Id
-    private int id;
-    private double amount;
+@AllArgsConstructor
+public class Address {
+    @Column(name="streetaddress")
+    private String streetAddress;
+    private String city;
+    private String state;
+    private String zipcode;
+    private String country;
 }
