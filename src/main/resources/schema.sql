@@ -8,13 +8,26 @@
  */
 use jpa
 ;
-CREATE TABLE customer (
-	id int primary key,
-    username varchar(200),
-    email varchar(100),
-    streetaddress varchar(100),
-    city varchar(100),
-    state varchar(100),
-    zipcode varchar(5),
-    country varchar(100)
+create table programmer(
+id int PRIMARY KEY AUTO_INCREMENT,
+name varchar(20),
+salary int
 )
+;
+create table project(
+id int PRIMARY KEY AUTO_INCREMENT,
+name varchar(20)
+)
+;
+create table programmers_projects(
+programmer_id int,
+project_id int,
+FOREIGN KEY (programmer_id)
+REFERENCES programmer(id),
+FOREIGN KEY (project_id)
+REFERENCES project(id)
+)
+;
+select * from programmer;
+select * from project;
+select * from programmers_projects;
