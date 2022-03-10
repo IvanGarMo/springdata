@@ -8,26 +8,24 @@
  */
 use jpa
 ;
-create table programmer(
+create table person(
 id int PRIMARY KEY AUTO_INCREMENT,
-name varchar(20),
-salary int
+first_name varchar(20),
+last_name varchar(20),
+age int
 )
 ;
-create table project(
+create table license(
 id int PRIMARY KEY AUTO_INCREMENT,
-name varchar(20)
+type varchar(20),
+valid_from date,
+valid_to date,
+person_id int,
+FOREIGN KEY (person_id)
+REFERENCES person(id)
 )
 ;
-create table programmers_projects(
-programmer_id int,
-project_id int,
-FOREIGN KEY (programmer_id)
-REFERENCES programmer(id),
-FOREIGN KEY (project_id)
-REFERENCES project(id)
-)
+select * from person
 ;
-select * from programmer;
-select * from project;
-select * from programmers_projects;
+select * from license
+;
