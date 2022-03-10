@@ -8,12 +8,13 @@
  */
 use jpa
 ;
-create table employee(
-id int,
-name varchar(20),
-streetaddress varchar(30),
-city varchar(20),
-state varchar(20),
-zipcode varchar(20),
-country varchar(20)
+CREATE TABLE customer (
+	id int primary key,
+    username varchar(200),
+    email varchar(100),
+    streetaddress varchar(100),
+    city varchar(100),
+    state varchar(100),
+    zipcode varchar(5),
+    country varchar(100)
 )
