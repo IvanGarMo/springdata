@@ -8,11 +8,22 @@
  */
 use jpa
 ;
-create table bankaccount (accno int,lastname varchar(25),firstname varchar(25),bal int)
-;
-insert into bankaccount values(1,'obama','barack',5000)
-;
-insert into bankaccount values(2,'donald','trump',4000)
-;
-select * from bankaccount
-;
+DELIMITER //
+CREATE PROCEDURE GetAllProducts()
+BEGIN
+	SELECT *  FROM product;
+END //
+DELIMITER //
+CREATE PROCEDURE GetAllProductsByPrice(IN price_in decimal)
+BEGIN
+	SELECT *  FROM product where price>price_in;
+END //
+DELIMITER //
+CREATE PROCEDURE GetAllProductsCountByPrice(IN price_in decimal)
+BEGIN
+	SELECT count(*)  FROM product where price>price_in;
+END //
+
+drop procedure GetAllProducts;
+drop procedure GetAllProductsByPrice;
+drop procedure GetAllProductsCountByPrice;
