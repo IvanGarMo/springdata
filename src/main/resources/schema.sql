@@ -8,10 +8,10 @@
  */
 use jpa
 ;
-create table if not exists student(
-id int primary key,
-fname varchar(20),
-lname varchar(20),
-score int
+create table payment(
+id int PRIMARY KEY,
+pmode varchar(2),
+amount decimal(8,3) ,
+cardnumber varchar(20),
+checknumber varchar(20)
 );
-S
