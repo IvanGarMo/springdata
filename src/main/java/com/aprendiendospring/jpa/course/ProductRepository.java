@@ -5,12 +5,11 @@
 package com.aprendiendospring.jpa.course;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.Repository;
 
 /**
  *
  * @author IvanGarMo
  */
-public interface LicenseRepository extends CrudRepository<License, Integer> {
+public interface ProductRepository extends CrudRepository<Product, Integer> {
     
 }

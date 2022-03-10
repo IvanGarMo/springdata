@@ -4,15 +4,13 @@
  */
 package com.aprendiendospring.jpa.course;
 
-import java.util.Set;
+import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
-
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 /**
  *
  * @author IvanGarMo
@@ -20,16 +18,12 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-class Project {
+@Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
+public class Product implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String name;
-    @ManyToMany(mappedBy="projects")
-    private Set<Programmer> programmers;
-    
-    @Override
-    public String toString() {
-        return "[Id: "+this.id+ " Name: "+name+"]";
-    }
+    private String description;
+    private double price;
 }
