@@ -7,6 +7,7 @@ package com.aprendiendospring.jpa.course;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,15 +19,12 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name="bankaccount")
-public class BankAccount {
+@Table(name="image")
+public class Image {
     @Id
-    @Column(name="accno")
-    private int accountNumber;
-    @Column(name="firstname")
-    private String firstName;
-    @Column(name="lastname")
-    private String lastName;
-    @Column(name="bal")
-    private int balance;
+    private long id;
+    private String name;
+    @Column(name="data", columnDefinition="MEDIUMBLOB")
+    @Lob
+    private byte[] file;
 }
