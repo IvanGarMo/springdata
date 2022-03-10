@@ -10,6 +10,6 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author IvanGarMo
  */
-public interface ProductRepository extends CrudRepository<Product, Integer> {
+public interface BankAccountRepository extends CrudRepository<BankAccount, Integer> {
     
 }

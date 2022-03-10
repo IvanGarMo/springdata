@@ -4,9 +4,7 @@
  */
 package com.aprendiendospring.jpa.course;
 
-import javax.persistence.EntityManager;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.Session;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,19 +15,12 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @SpringBootTest
 @Slf4j
-public class ProductCacheTest {
+public class AccountOperationTest {
     @Autowired
-    private ProductRepository productRepository;
-    @Autowired
-    private EntityManager entityManager;
+    AccountOperations bankingOperations;
     
     @Test
-    public void testProduct() {
-        Session session = entityManager.unwrap(Session.class);
-        Product p1 = productRepository.findById(2).get();
-        productRepository.findById(2).get();
-        
-        session.evict(p1);
-        productRepository.findById(2).get();
+    public void testTransfer() {
+        bankingOperations.transfers(500);
     }
 }

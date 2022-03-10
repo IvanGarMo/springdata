@@ -4,13 +4,13 @@
  */
 package com.aprendiendospring.jpa.course;
 
-import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 /**
  *
  * @author IvanGarMo
@@ -18,12 +18,15 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Entity
 @Getter
 @Setter
-@Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
-public class Product implements Serializable {
-    private static final long serialVersionUID = 1L;
+@Table(name="bankaccount")
+public class BankAccount {
     @Id
-    private int id;
-    private String name;
-    private String description;
-    private double price;
+    @Column(name="accno")
+    private int accountNumber;
+    @Column(name="firstname")
+    private String firstName;
+    @Column(name="lastname")
+    private String lastName;
+    @Column(name="bal")
+    private int balance;
 }
