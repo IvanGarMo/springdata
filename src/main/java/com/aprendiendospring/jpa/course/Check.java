@@ -6,6 +6,7 @@ package com.aprendiendospring.jpa.course;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import lombok.Data;
 
@@ -16,6 +17,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="bankcheck")
+@PrimaryKeyJoinColumn(name="id")
 public class Check extends Payment {
     @Column(name="checknumber")
     private String checkNumber;

@@ -5,6 +5,7 @@
 package com.aprendiendospring.jpa.course;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import lombok.Data;
 /**
@@ -14,6 +15,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="card")
+@PrimaryKeyJoinColumn(name="id")
 public class CreditCard extends Payment {
     @Column(name="cardnumber")
     private String creditCardNumber;
