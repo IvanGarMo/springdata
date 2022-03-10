@@ -4,7 +4,6 @@
  */
 package com.aprendiendospring.jpa.course;
 
-import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
@@ -19,8 +18,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @RequiredArgsConstructor
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="pmode")
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class Payment {
     @Id
     private int id;

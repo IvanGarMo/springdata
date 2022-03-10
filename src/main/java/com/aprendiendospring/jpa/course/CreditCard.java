@@ -4,8 +4,8 @@
  */
 package com.aprendiendospring.jpa.course;
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import lombok.Data;
 /**
  *
@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @Data
 @Entity
-@DiscriminatorValue("cc")
+@Table(name="card")
 public class CreditCard extends Payment {
     @Column(name="cardnumber")
     private String creditCardNumber;

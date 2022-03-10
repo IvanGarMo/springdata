@@ -5,8 +5,8 @@
 package com.aprendiendospring.jpa.course;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import lombok.Data;
 
 /**
@@ -15,7 +15,7 @@ import lombok.Data;
  */
 @Data
 @Entity
-@DiscriminatorValue("ch")
+@Table(name="bankcheck")
 public class Check extends Payment {
     @Column(name="checknumber")
     private String checkNumber;
